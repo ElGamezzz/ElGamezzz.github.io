@@ -67,12 +67,23 @@ Por ejemplo, podemos usar la función para convertir una lista de cadenas a núm
       <p>En esta parte del semestre aprendí programacion orientada a objetos y Patrones; Patrones de diseño, Patrones creacionales y Patrones estructurales<br>
       <br>La programación orientada a objetos (POO) es un paradigma de programación que organiza el código en torno a objetos. Los objetos son entidades que tienen datos y comportamientos.<br>
         En el siguiente ejemplo crearemos una clase llamada *Persona*. Esta clase tendrá los siguientes atributos: <br> - nombre: el nombre de la persona <br>
-apellido: el apellido de la persona<br>
-edad: la edad de la persona<br>
+- apellido: el apellido de la persona<br>
+- edad: la edad de la persona<br>
         <img src="ClasePersona.jpg" alt="Ejemplo POO"><br>La clase también tiene un método llamado hablar(). Este método imprime un mensaje que incluye el nombre, el apellido y la edad de la persona.<br>
         Este código imprimirá el siguiente resultado: Hola, soy Juan Perez y tengo 20 años. ¿Cómo estás?<br>La POO es un paradigma de programación potente que puede ser utilizado para crear código más organizado y eficiente.<br>
-        
-   
+        <br> Dentro de los patrones de diseño aprendí los siguientes patrones:<br>
+        - Observer<br>
+        - Strategy<br>
+        <br>El patrón Observer es un patrón de diseño de comportamiento que permite a un objeto notificar a otros objetos sobre cambios en su estado.<br>
+        En el siguiente ejemplo, crearemos una clase llamada *tema* y dentro de esta habrá una lista de observadores.<br>
+        La clase Tema tiene un método llamado suscribir(). Este método agrega un observador a la lista de observadores.<br>
+La clase Tema también tiene un método llamado notificar(). Este método notifica a todos los observadores de que el tema ha cambiado.<br>
+Las clases Observador1 y Observador2 implementan la interfaz Observador. Esta interfaz tiene un método llamado actualizar().<br>
+    <img src="PatronObserver.jpg" alt="Ejemplo Patron observer"><br>
+        El código crea dos objetos Observador: observador1 y observador2.<br>
+El código agrega los dos observadores al tema.<br>
+Finalmente, el código llama al método notificar() del tema.<br>
+Este código imprimirá el siguiente resultado: El tema ha cambiado - El tema ha cambiado de nuevo<br>
       
       
       
