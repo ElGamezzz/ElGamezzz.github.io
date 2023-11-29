@@ -23,7 +23,7 @@
       color: white;
     }
     details {
-      margin: 10px;
+      margin: 5px;
     }
     .container {
       display: flex;
@@ -64,14 +64,64 @@ Por ejemplo, podemos usar la función para convertir una lista de cadenas a núm
     </details>
     <details>
       <summary><h2>Segundo Corte</h2></summary>
-      <p>En esta parte del semestre aprendí programacion orientada a objetos y Patrones; Patrones de diseño, Patrones creacionales y Patrones estructurales<br>
+      <p>En esta parte del semestre aprendí programacion orientada a objetos y Patrones de diseño.<br>
       <br>La programación orientada a objetos (POO) es un paradigma de programación que organiza el código en torno a objetos. Los objetos son entidades que tienen datos y comportamientos.<br>
         En el siguiente ejemplo crearemos una clase llamada *Persona*. Esta clase tendrá los siguientes atributos: <br> - nombre: el nombre de la persona <br>
 - apellido: el apellido de la persona<br>
 - edad: la edad de la persona<br>
         <img src="ClasePersona.jpg" alt="Ejemplo POO" height="140" width="498"><br>La clase también tiene un método llamado hablar(). Este método imprime un mensaje que incluye el nombre, el apellido y la edad de la persona.<br>
         Este código imprimirá el siguiente resultado: Hola, soy Juan Perez y tengo 20 años. ¿Cómo estás?<br>La POO es un paradigma de programación potente que puede ser utilizado para crear código más organizado y eficiente.<br>
-        <br> Dentro de los patrones de diseño aprendí los siguientes patrones:<br>
+         <br>
+Los patrones de diseño son soluciones a problemas comunes en el desarrollo de software. Se basan en la experiencia de otros desarrolladores y proporcionan una base sólida para la construcción de software robusto y extensible.<br>
+Los patrones de diseño se pueden clasificar en tres categorías principales:   <br>
+- Patrones de creación: Estos patrones se centran en la creación de objetos.   <br>
+- Patrones estructurales: Estos patrones se centran en la forma en que los objetos se relacionan entre sí.<br>
+- Patrones de comportamiento: Estos patrones se centran en la forma en que los objetos se comunican entre sí.<br>
+        <br> Dentro de los patrones de Creacion aprendí los siguientes:<br>        
+        - Factory<br>
+        - Singleton<br>
+        <br>El patrón Factory proporciona una forma de crear objetos sin exponer la lógica de creación.<br>
+        Este patrón es útil en situaciones en las que se desea que la lógica de creación esté oculta de los usuarios de la clase.<br>
+        En el siguiente ejemplo, el código crea una clase llamada Factory. Esta clase tiene un método llamado crear_objeto(). El método crear_objeto() recibe un tipo de objeto como argumento. El método devuelve una instancia del objeto especificado.<br>
+Las clases Coche y Moto implementan la lógica de creación de los objetos Coche y Moto.<br>        
+        <img src="PatronFactory.jpg" alt="Ejemplo Patron Factory" height="283" width="273"><br>
+        El código crea una instancia de la clase Factory.<br>
+El código llama al método crear_objeto() de la fábrica. El método devuelve una instancia de la clase Coche.<br>
+El código imprime la instancia de la clase Coche.<br>
+El código llama al método crear_objeto() de la fábrica. El método devuelve una instancia de la clase Moto.<br>
+El código imprime la instancia de la clase Moto.<br>
+        <br>El patrón Singleton garantiza que solo se cree una instancia de una clase.<br>
+        Este patrón es útil en situaciones en las que solo se requiere una instancia de una clase, como en el caso de un objeto de configuración o un objeto de acceso a datos.<br>
+        En el siguiente ejemplo, el  código crea una clase llamada Singleton. Esta clase tiene un atributo privado llamado __instance.<br>
+El constructor de la clase Singleton comprueba si ya existe una instancia de la clase. Si no existe, crea una nueva instancia.<br>
+El método get_instance() de la clase Singleton devuelve la instancia actual de la clase.<br>
+         <img src="PatronSingleton.jpg" alt="Ejemplo Patron Singleton" height="178" width="200"><br>
+        El código crea una instancia de la clase Singleton.<br>
+El código imprime la instancia de la clase Singleton.<br>
+Este código imprimirá el siguiente resultado: __main__.Singleton object at 0x7f0d69543540<br>
+         <br> Dentro de los patrones Estructurales aprendí los siguientes:<br>        
+        - Strategy<br>
+        - Adapter<br>
+        <br>El patrón Strategy es un patrón de diseño de comportamiento que permite intercambiar algoritmos en tiempo de ejecución.<br>
+        En el siguiente ejemplo, el código crea una clase llamada Contexto. Esta clase tiene una propiedad llamada estrategia.<br>
+La clase Contexto tiene un método llamado ejecutar(). Este método llama al método ejecutar() de la estrategia actual.<br>
+La clase Estrategia es una interfaz que define el método ejecutar().<br>
+Las clases EstrategiaSuma y EstrategiaResta implementan la interfaz Estrategia.<br>
+      <img src="PatronStrategy.jpg" alt="Ejemplo Patron Strategy" height="227" width="233"><br>
+        El código crea un objeto Contexto con una estrategia de suma.<br>
+El código llama al método ejecutar() del contexto.<br>
+Este código imprimirá el siguiente resultado: 11<br>
+        <br>El patrón Adapter es un patrón de diseño estructural que permite que dos clases que no son compatibles se comuniquen entre sí.<br>
+        Este código crea una clase llamada Adaptador. Esta clase tiene una propiedad llamada objeto_adaptado.<br>
+El constructor de la clase Adaptador recibe un objeto de la clase ObjetoAdaptado.<br>
+El método metodo_1() de la clase Adaptador llama al método metodo_2() del objeto objeto_adaptado.<br>
+La clase ObjetoAdaptado tiene un método llamado metodo_2() que devuelve una cadena.<br>
+        <img src="PatronAdapter.jpg" alt="Ejemplo Patron Adapter" height="174" width="230"><br>
+        El código crea un objeto ObjetoAdaptado.<br>
+El código crea un objeto Adaptador que pasa el objeto ObjetoAdaptado como argumento al constructor.<br>
+El código llama al método metodo_1() del adaptador.<br>
+Este código imprimirá el siguiente resultado: Este es el método 2<br>        
+        <br> Dentro de los patrones de Comportamiento aprendí los siguientes:<br>
         - Observer<br>
         - Strategy<br>
         <br>El patrón Observer es un patrón de diseño de comportamiento que permite a un objeto notificar a otros objetos sobre cambios en su estado.<br>
@@ -84,8 +134,7 @@ Las clases Observador1 y Observador2 implementan la interfaz Observador. Esta in
 El código agrega los dos observadores al tema.<br>
 Finalmente, el código llama al método notificar() del tema.<br>
 Este código imprimirá el siguiente resultado: El tema ha cambiado - El tema ha cambiado de nuevo<br>
-        <br>El patrón Strategy es un patrón de diseño de comportamiento que permite intercambiar algoritmos en tiempo de ejecución.
-      
+       
       
       
       </p>
