@@ -1,155 +1,368 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Lenguajes de Programación</title>
- <style>
-  body{
-    background-image: linear-gradient(to bottom, #004579, #673288, #d38464);;
-  }
-    h1 {
-      text-align: center;
-      font-family: comic sans ms;
-      color: white;
-    }
-    p {
-      text-align: center;
-      font-family: comic sans ms;
-      color: white;
-    }
-    h2 {
-      text-align: center;
-      font-family: comic sans ms;
-      color: white;
-    }
-    details {
-      margin: 5px;
-    }
-    .container {
-      display: flex;
-      justify-content: space-around;
-    }
-  </style>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>José Delgado - Bibliografía Personal</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "sans": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
-<body>
-  <h1>Lenguajes de Programación</h1>
-  <p>Estudiante José Sebastian Delgado Gamez</p>
-  <div class="container">
-    <details>
-      <summary><h2>Primer Corte</h2></summary>
-      <p>En esta parte del semestre aprendí a utilizar las funciones map, filter, reduce y la funcion lambda.<br>
-<br>La funcion map() se utiliza para aplicar una función a cada elemento de una secuencia. Devuelve un objeto map, que puede ser convertido a una lista, tupla, etc.<br>
-Por ejemplo, podemos usar la función para convertir una lista de cadenas a números:<br>
-<img src="MapNumCadn.jpg" alt="Ejemplo de la función map" height="101" width="325"><br>Este código imprimirá el siguiente resultado: [1, 2, 3, 4]<br>
-      La función map() también se puede utilizar para aplicar una función a dos o más secuencias.<br>
-        Por ejemplo, el siguiente código calcula la suma de los elementos de dos listas:<br>
-      <img src="SumList.jpg" alt="Ejemplo de la función map" height="113" width="278"><br> Este código imprimirá el siguiente resultado: [5, 7, 9]<br>     
-      <br>La funcion filter() se utiliza para filtrar los elementos de una secuencia según una condición. Devuelve un objeto iterador, que puede ser convertido a una lista, tupla, etc.<br>
-      Por ejemplo, podemos usar la función para obtener una lista de números pares de una lista de números:<br>
-      <img src="FilterListNum.jpg" alt="Ejemplo de la funcion filter" height="98" width="268"><br>Este código imprimirá el siguiente resultado: [2, 4, 6]<br>      
-      Otro ejemplo es el cálculo de la longitud de las cadenas que tienen más de tres caracteres:<br>
-      <img src="ListaLarga.jpg" alt="Ejemplo de la funcion filter" height="101" width="345"><br>Este código imprimirá el siguiente resultado: ['hola', 'mundo', 'ejemplo']<br>      
-      <br> La función reduce() se utiliza para realizar un cálculo acumulativo sobre una secuencia de valores. El primer argumento de la función es una función que recibe dos argumentos y devuelve un valor.<br> 
-      Por ejemplo, podemos usar la función reduce() para calcular la suma de todos los elementos de una lista:<br>
-        <img src="SumaLista.jpg" alt="Ejemplo de la funcion reduce" height="97" width="171"><br>Este código imprimirá el siguiente resultado: 10<br>
-        La función también se puede utilizar para realizar otras operaciones acumulativas, como la concatenación de cadenas, la comparación de valores, etc.<br>
-        Por ejemplo, el siguiente código concatena todas las cadenas de una lista:<br>
-        <img src="ConcatenarLista.jpg" alt="Ejemplo de la funcion reduce" height="98" width="200"><br>Este código imprimirá el siguiente resultado: Holamundo<br>
-        <br>Las funciones lambda son una forma de crear funciones anónimas en Python. Las funciones lambda se pueden usar en cualquier lugar donde se pueda usar una función normal.<br>
-        Por ejemplo, podemos usar una función lambda para calcular el doble de un número:<br>
-        <img src="DoblarLambda.jpg" alt="Ejemplo de la funcion lambda" height="45" width="192"><br>Este código imprimirá el siguiente resultado: 20<br>
-        Las funciones lambda también se pueden usar con las funciones map(), filter() y reduce().<br>
-        <img src="ListaLargas.jpg" alt="Ejemplo de la funcion lamda" height="63" width="396"><br>Este código imprimirá el siguiente resultado: ['hola', 'mundo', 'ejemplo']
-      </p>
-    </details>
-    <details>
-      <summary><h2>Segundo Corte</h2></summary>
-      <p>En esta parte del semestre aprendí programacion orientada a objetos y Patrones de diseño.<br>
-      <br>La programación orientada a objetos (POO) es un paradigma de programación que organiza el código en torno a objetos. Los objetos son entidades que tienen datos y comportamientos.<br>
-        En el siguiente ejemplo crearemos una clase llamada *Persona*. Esta clase tendrá los siguientes atributos: <br> - nombre: el nombre de la persona <br>
-- apellido: el apellido de la persona<br>
-- edad: la edad de la persona<br>
-        <img src="ClasePersona.jpg" alt="Ejemplo POO" height="140" width="498"><br>La clase también tiene un método llamado hablar(). Este método imprime un mensaje que incluye el nombre, el apellido y la edad de la persona.<br>
-        Este código imprimirá el siguiente resultado: Hola, soy Juan Perez y tengo 20 años. ¿Cómo estás?<br>La POO es un paradigma de programación potente que puede ser utilizado para crear código más organizado y eficiente.<br>
-         <br>
-Los patrones de diseño son soluciones a problemas comunes en el desarrollo de software. Se basan en la experiencia de otros desarrolladores y proporcionan una base sólida para la construcción de software robusto y extensible.<br>
-Los patrones de diseño se pueden clasificar en tres categorías principales:   <br>
-- Patrones de creación: Estos patrones se centran en la creación de objetos.   <br>
-- Patrones estructurales: Estos patrones se centran en la forma en que los objetos se relacionan entre sí.<br>
-- Patrones de comportamiento: Estos patrones se centran en la forma en que los objetos se comunican entre sí.<br>
-        <br> Dentro de los patrones de Creacion aprendí los siguientes:<br>        
-        - Factory<br>
-        - Singleton<br>
-        <br>El patrón Factory proporciona una forma de crear objetos sin exponer la lógica de creación.<br>
-        Este patrón es útil en situaciones en las que se desea que la lógica de creación esté oculta de los usuarios de la clase.<br>
-        En el siguiente ejemplo, el código crea una clase llamada Factory. Esta clase tiene un método llamado crear_objeto(). El método crear_objeto() recibe un tipo de objeto como argumento. El método devuelve una instancia del objeto especificado.<br>
-Las clases Coche y Moto implementan la lógica de creación de los objetos Coche y Moto.<br>        
-        <img src="PatronFactory.jpg" alt="Ejemplo Patron Factory" height="283" width="273"><br>
-        El código crea una instancia de la clase Factory.<br>
-El código llama al método crear_objeto() de la fábrica. El método devuelve una instancia de la clase Coche.<br>
-El código imprime la instancia de la clase Coche.<br>
-El código llama al método crear_objeto() de la fábrica. El método devuelve una instancia de la clase Moto.<br>
-El código imprime la instancia de la clase Moto.<br>
-        <br>El patrón Singleton garantiza que solo se cree una instancia de una clase.<br>
-        Este patrón es útil en situaciones en las que solo se requiere una instancia de una clase, como en el caso de un objeto de configuración o un objeto de acceso a datos.<br>
-        En el siguiente ejemplo, el  código crea una clase llamada Singleton. Esta clase tiene un atributo privado llamado __instance.<br>
-El constructor de la clase Singleton comprueba si ya existe una instancia de la clase. Si no existe, crea una nueva instancia.<br>
-El método get_instance() de la clase Singleton devuelve la instancia actual de la clase.<br>
-         <img src="PatronSingleton.jpg" alt="Ejemplo Patron Singleton" height="178" width="200"><br>
-        El código crea una instancia de la clase Singleton.<br>
-El código imprime la instancia de la clase Singleton.<br>
-Este código imprimirá el siguiente resultado: __main__.Singleton object at 0x7f0d69543540<br>
-         <br> Dentro de los patrones Estructurales aprendí los siguientes:<br>        
-        - Strategy<br>
-        - Adapter<br>
-        <br>El patrón Strategy es un patrón de diseño de comportamiento que permite intercambiar algoritmos en tiempo de ejecución.<br>
-        En el siguiente ejemplo, el código crea una clase llamada Contexto. Esta clase tiene una propiedad llamada estrategia.<br>
-La clase Contexto tiene un método llamado ejecutar(). Este método llama al método ejecutar() de la estrategia actual.<br>
-La clase Estrategia es una interfaz que define el método ejecutar().<br>
-Las clases EstrategiaSuma y EstrategiaResta implementan la interfaz Estrategia.<br>
-      <img src="PatronStrategy.jpg" alt="Ejemplo Patron Strategy" height="227" width="233"><br>
-        El código crea un objeto Contexto con una estrategia de suma.<br>
-El código llama al método ejecutar() del contexto.<br>
-Este código imprimirá el siguiente resultado: 11<br>
-        <br>El patrón Adapter es un patrón de diseño estructural que permite que dos clases que no son compatibles se comuniquen entre sí.<br>
-        Este código crea una clase llamada Adaptador. Esta clase tiene una propiedad llamada objeto_adaptado.<br>
-El constructor de la clase Adaptador recibe un objeto de la clase ObjetoAdaptado.<br>
-El método metodo_1() de la clase Adaptador llama al método metodo_2() del objeto objeto_adaptado.<br>
-La clase ObjetoAdaptado tiene un método llamado metodo_2() que devuelve una cadena.<br>
-        <img src="PatronAdapter.jpg" alt="Ejemplo Patron Adapter" height="174" width="230"><br>
-        El código crea un objeto ObjetoAdaptado.<br>
-El código crea un objeto Adaptador que pasa el objeto ObjetoAdaptado como argumento al constructor.<br>
-El código llama al método metodo_1() del adaptador.<br>
-Este código imprimirá el siguiente resultado: Este es el método 2<br>        
-        <br> Dentro de los patrones de Comportamiento aprendí los siguientes:<br>
-        - Observer<br>
-        - Strategy<br>
-        <br>El patrón Observer es un patrón de diseño de comportamiento que permite a un objeto notificar a otros objetos sobre cambios en su estado.<br>
-        En el siguiente ejemplo, crearemos una clase llamada *tema* y dentro de esta habrá una lista de observadores.<br>
-        La clase Tema tiene un método llamado suscribir(). Este método agrega un observador a la lista de observadores.<br>
-La clase Tema también tiene un método llamado notificar(). Este método notifica a todos los observadores de que el tema ha cambiado.<br>
-Las clases Observador1 y Observador2 implementan la interfaz Observador. Esta interfaz tiene un método llamado actualizar().<br>
-    <img src="PatronObserver.jpg" alt="Ejemplo Patron observer" height="330" width="222"><br>
-        El código crea dos objetos Observador: observador1 y observador2.<br>
-El código agrega los dos observadores al tema.<br>
-Finalmente, el código llama al método notificar() del tema.<br>
-Este código imprimirá el siguiente resultado: El tema ha cambiado - El tema ha cambiado de nuevo<br></p>
-    </details>
-    <details>
-      <summary><h2>Tercer Corte</h2></summary>
-      <p>En el tercer corte aprendí Programacion concurrente en Java utilizando hilos simples<br>
-      La programación concurrente en Java es una técnica de programación que permite que dos o más tareas se ejecuten al mismo tiempo en el mismo proceso.<br>
-        Esta técnica se utiliza para aumentar el rendimiento de los programas, ya que permite que las tareas se ejecuten en paralelo<br>
-        Un hilo es una unidad de ejecución de código que se ejecuta en paralelo con otros hilos.<br>
-        Cada hilo tiene su propio contexto de ejecución, que incluye su propia pila de llamadas, su propio estado de ejecución y su propio conjunto de variables locales.<br>
-      <br>Para el siguiente ejemplo, el código crea dos hilos, uno llamado hilo1 y otro llamado hilo2. Cada hilo implementa la interfaz Runnable, que proporciona un método llamado run() que se ejecuta cuando el hilo se inicia.<br>
-En el método run() de cada hilo, se imprime un mensaje en la consola.<br>
-        <img src="JavaHilos.jpg" alt="Ejemplo Patron observer" height="258" width="286"><br>
-      Cuando se ejecuta este código, los dos hilos se inician y se ejecutan en paralelo. El orden en el que se imprimen los mensajes es indeterminado, ya que los hilos se ejecutan de forma independiente.<br>
-Aquí hay un ejemplo de la salida del código: Hola desde el hilo 1 - Hola desde el hilo 2
-      
-      </p>
-    </details>
+<body class="bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden">
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#e7ebf3] dark:border-[#2d3748]">
+<div class="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo/Name -->
+<div class="flex items-center gap-2">
+<div class="flex items-center justify-center size-8 bg-primary rounded-lg text-white">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<h1 class="text-lg font-bold tracking-tight text-[#0d121b] dark:text-white">José Delgado</h1>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors" href="#about">Sobre mí</a>
+<a class="text-sm font-medium text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors" href="#education">Educación</a>
+<a class="text-sm font-medium text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors" href="#skills">Habilidades</a>
+<a class="text-sm font-medium text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors" href="#projects">Proyectos</a>
+<a class="text-sm font-medium text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors" href="#research">Investigación</a>
+</div>
+<!-- Mobile Menu Button (Placeholder) -->
+<button class="md:hidden p-2 text-gray-600 dark:text-gray-300">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Layout Container -->
+<main class="flex-grow w-full max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Sidebar / Profile Column -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Profile Card -->
+<div class="bg-white dark:bg-[#1a202c] rounded-xl p-6 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]">
+<div class="flex flex-col items-center text-center">
+<div class="relative mb-4 group cursor-pointer">
+    <div class="w-32 h-32 rounded-full bg-cover bg-center border-4 border-primary/10" 
+     data-alt="Retrato profesional de José Sebastián Delgado Gámez" 
+     style="background-image: url('FotoDePerfil.png');">
+</div>
+
+<div class="absolute bottom-1 right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white dark:border-[#1a202c]"></div>
+</div>
+<h2 class="text-2xl font-bold text-[#0d121b] dark:text-white">José Sebstián Delgado Gámez</h2>
+<p class="text-primary font-medium mt-1">Investigador &amp; Desarrollador</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
+                            Estudiante de Ingeniería de Sistemas construyendo simulaciones interactivas en Unity (C#), entornos de realidad virtual y multijugador.
+                        </p>
+<div class="mt-6 w-full">
+<!-- <button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-2.5 px-4 rounded-lg transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                                Descargar CV
+                            </button> -->
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-[#e7ebf3] dark:border-[#2d3748]">
+<h3 class="text-xs font-bold uppercase tracking-wider text-gray-500 mb-4">Información Personal</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400">Edad</p>
+<p class="text-sm font-medium text-[#0d121b] dark:text-white">22 años</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">location_on</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400">Residencia</p>
+<p class="text-sm font-medium text-[#0d121b] dark:text-white">Cali, Colombia</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400">Email</p>
+<p class="text-sm font-medium text-[#0d121b] dark:text-white">jsgamez46@gmail.com</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Widget -->
+<div class="bg-white dark:bg-[#1a202c] rounded-xl p-6 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]" id="skills">
+  <div class="flex items-center gap-2 mb-4">
+    <span class="material-symbols-outlined text-primary">psychology</span>
+    <h3 class="font-bold text-lg text-[#0d121b] dark:text-white">Habilidades</h3>
   </div>
-</body>
-</html>
+  <div class="space-y-4">
+    <div>
+      <p class="text-xs font-semibold text-gray-500 mb-2 uppercase">Técnicas</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Unity 3D</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">C#</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Realidad Virtual</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Interfaces gráficas</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Ingeniería de software</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">GitHub Pages</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">TailwindCSS</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Accesibilidad y SEO</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Photoshop</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Sony Vegas</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">CapCut</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Edición de video para redes</span>
+      </div>
+    </div>
+    <div>
+      <p class="text-xs font-semibold text-gray-500 mb-2 uppercase">Blandas</p>
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">Comunicación clara</span>
+        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">Trabajo colaborativo</span>
+        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">Pensamiento crítico</span>
+        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">Gestión de tiempo</span>
+        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">Perfeccionismo estratégico</span>
+        <span class="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-xs font-medium">Apertura a la crítica</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Hobbies Widget -->
+<div class="bg-white dark:bg-[#1a202c] rounded-xl p-6 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]">
+  <div class="flex items-center gap-2 mb-4">
+    <span class="material-symbols-outlined text-primary">interests</span>
+    <h3 class="font-bold text-lg text-[#0d121b] dark:text-white">Hobbies</h3>
+  </div>
+  <div class="grid grid-cols-3 gap-2">
+    <div class="flex flex-col items-center justify-center p-2 rounded-lg bg-background-light dark:bg-background-dark text-center hover:bg-primary/5 transition-colors">
+      <span class="material-symbols-outlined text-primary mb-1">videocam</span>
+      <span class="text-[10px] font-medium">Edición de video</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-2 rounded-lg bg-background-light dark:bg-background-dark text-center hover:bg-primary/5 transition-colors">
+      <span class="material-symbols-outlined text-primary mb-1">photo_camera</span>
+      <span class="text-[10px] font-medium">Edición de fotos</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-2 rounded-lg bg-background-light dark:bg-background-dark text-center hover:bg-primary/5 transition-colors">
+      <span class="material-symbols-outlined text-primary mb-1">sports_esports</span>
+      <span class="text-[10px] font-medium">Videojuegos</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-2 rounded-lg bg-background-light dark:bg-background-dark text-center hover:bg-primary/5 transition-colors">
+      <span class="material-symbols-outlined text-primary mb-1">youtube_activity</span>
+      <span class="text-[10px] font-medium">YouTube (ElGamezzz)</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-2 rounded-lg bg-background-light dark:bg-background-dark text-center hover:bg-primary/5 transition-colors">
+      <span class="material-symbols-outlined text-primary mb-1">memory</span>
+      <span class="text-[10px] font-medium">Tecnología e informática</span>
+    </div>
+    <div class="flex flex-col items-center justify-center p-2 rounded-lg bg-background-light dark:bg-background-dark text-center hover:bg-primary/5 transition-colors">
+      <span class="material-symbols-outlined text-primary mb-1">menu_book</span>
+      <span class="text-[10px] font-medium">Divulgación digital</span>
+    </div>
+  </div>
+</div>
+
+</div>
+<!-- Main Content Column -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+
+  <!-- Education Section -->
+  <section class="bg-white dark:bg-[#1a202c] rounded-xl p-6 md:p-8 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]" id="education">
+    <div class="flex items-center justify-between mb-6">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-primary/10 rounded-lg text-primary">
+          <span class="material-symbols-outlined">school</span>
+        </div>
+        <h2 class="text-xl md:text-2xl font-bold text-[#0d121b] dark:text-white">Educación</h2>
+      </div>
+    </div>
+    <div class="relative pl-4 border-l-2 border-primary/20 space-y-8">
+      <!-- Item 1 -->
+      <div class="relative">
+        <div class="absolute -left-[21px] top-1.5 size-3 bg-primary rounded-full ring-4 ring-white dark:ring-[#1a202c]"></div>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+          <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Pregrado en Ingeniería de Sistemas</h3>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
+            2020 - Presente
+          </span>
+        </div>
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1">Universidad Santiago de Cali (USC), Cali, Colombia</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
+          Tesis: CiviLAB-VR — innovación pedagógica con simulación estructural y realidad virtual aplicada a la enseñanza de Estática en Ingeniería Civil.
+        </p>
+      </div>
+      <!-- Item 2 -->
+      <div class="relative">
+        <div class="absolute -left-[21px] top-1.5 size-3 bg-gray-300 dark:bg-gray-600 rounded-full ring-4 ring-white dark:ring-[#1a202c]"></div>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+          <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Bachiller Técnico Industrial, especialidad Informática</h3>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+            Graduado: 6 de diciembre de 2019
+          </span>
+        </div>
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1">Institución Educativa Municipal Técnico Industrial, Pasto, Nariño, Colombia</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="flex items-center gap-3 mb-6 px-2">
+      <div class="p-2 bg-primary/10 rounded-lg text-primary">
+        <span class="material-symbols-outlined">rocket_launch</span>
+      </div>
+      <h2 class="text-xl md:text-2xl font-bold text-[#0d121b] dark:text-white">Proyectos destacados</h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Project Card 1: CiviLAB-VR -->
+      <div class="group flex flex-col bg-white dark:bg-[#1a202c] rounded-xl overflow-hidden shadow-sm border border-[#e7ebf3] dark:border-[#2d3748] hover:shadow-md transition-shadow">
+        <div class="h-48 overflow-hidden bg-gray-100 relative">
+          <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Interfaz de laboratorio de realidad virtual para Estática" style="background-image: url('FondoCiviLAB-VR.png');"></div>
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">CiviLAB-VR</h3>
+            <!-- <a class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors" href="#">
+              <span class="material-symbols-outlined text-[20px]">open_in_new</span> -->
+            </a>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+            Laboratorio inmersivo desarrollado en Unity 3D (C#) para enseñar Estática en Ingeniería Civil. Incluye simulaciones 3D de equilibrio de cuerpos rígidos, armaduras y cables, con retroalimentación en tiempo real y compatibilidad con visores VR.
+          </p>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Unity 3D</span>
+            <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">C#</span>
+            <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">VR</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2: Producción audiovisual YouTube -->
+      <div class="group flex flex-col bg-white dark:bg-[#1a202c] rounded-xl overflow-hidden shadow-sm border border-[#e7ebf3] dark:border-[#2d3748] hover:shadow-md transition-shadow">
+        <div class="h-48 overflow-hidden bg-gray-100 relative">
+          <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300" data-alt="Producción audiovisual para YouTube y redes sociales" style="background-image: url('YouTube-Logo.wine.png');"></div>
+        </div>
+        <div class="p-5 flex flex-col flex-grow">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Producción audiovisual — ElGamezzz</h3>
+            <a class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors" href="https://www.youtube.com/@elgamezzz1668" target="_blank" rel="noopener">
+              <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+            </a>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+            Gestión integral de canal de YouTube: grabación, edición de video, diseño de miniaturas y optimización para redes. Uso de Photoshop, Sony Vegas y CapCut para contenidos orientados a audiencias digitales.
+          </p>
+          <div class="mt-auto flex flex-wrap gap-2">
+            <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Photoshop</span>
+            <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Sony Vegas</span>
+            <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">CapCut</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research Section -->
+  <section class="bg-white dark:bg-[#1a202c] rounded-xl p-6 md:p-8 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]" id="research">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="p-2 bg-primary/10 rounded-lg text-primary">
+        <span class="material-symbols-outlined">article</span>
+      </div>
+      <h2 class="text-xl md:text-2xl font-bold text-[#0d121b] dark:text-white">Investigación y ponencias</h2>
+    </div>
+    <div class="space-y-6">
+      <!-- Paper / Talk 1 -->
+      <div class="flex flex-col gap-2 pb-6 border-b border-[#e7ebf3] dark:border-[#2d3748] last:border-0 last:pb-0">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="font-bold text-base text-[#0d121b] dark:text-white">CiviLAB-VR: innovación en el aprendizaje de estática para ingeniería civil</h3>
+          <span class="text-xs font-semibold whitespace-nowrap bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300 px-2 py-1 rounded">Ponencia y artículo — Sep 2025</span>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-300 italic">EIEI ACOFI / CLADI 2025, Cartagena de Indias, Colombia</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          Presentación de resultados del laboratorio CiviLAB-VR como innovación pedagógica. Artículo en memorias del congreso (DOI: 10.26507/paper.4295). Coautores: Valentina Arias, Sandra Villamizar, Diego Loaiza, Daniel Gómez.
+        </p>
+        <a class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1 mt-1" href="https://doi.org/10.26507/paper.4295" target="_blank" rel="noopener">
+          Ver DOI <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+      <!-- Paper / Talk 2 -->
+      <div class="flex flex-col gap-2 pb-6 border-b border-[#e7ebf3] dark:border-[#2d3748] last:border-0 last:pb-0">
+        <div class="flex items-start justify-between gap-4">
+          <h3 class="font-bold text-base text-[#0d121b] dark:text-white">CiviLAB-VR: Laboratorio Inmersivo para el aprendizaje de Estática en Ingeniería Civil</h3>
+          <span class="text-xs font-semibold whitespace-nowrap bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300 px-2 py-1 rounded">Ponencia — Nov 2025</span>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-300 italic">Jornada Interdisciplinaria de Construcción: Perspectivas y Desafíos, Pontificia Universidad Javeriana Cali</p>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          Artículo y exposición del laboratorio inmersivo, reportando alta motivación e inmersión y baja carga cognitiva en pruebas piloto con estudiantes de Ingeniería Civil.
+        </p>
+        <a class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1 mt-1" href="Artículo-Jornada-de-ConstrucciónV3.pdf" aria-label="Artículo de la Jornada Interdisciplinaria" target="_blank" rel="noopener">
+          Ver artículo <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+</div>
+</main>
+
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1a202c] border-t border-[#e7ebf3] dark:border-[#2d3748] py-8 mt-auto">
+<div class="max-w-[1100px] mx-auto px-4 text-center">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2025 José Delgado. Todos los derechos reservados.</p>
+<div class="flex justify-center gap-6 mt-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="https://www.linkedin.com/in/jose-sebastian-delgado-gamez-980243394" target="_blank" rel="noopener">
+<span class="sr-only">LinkedIn</span>
+<svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+</a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="https://github.com/ElGamezzz" target="_blank" rel="noopener">
+<span class="sr-only">GitHub</span>
+<svg class="h-6 w-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+</a>
+</div>
+</div>
+</footer>
+</body></html>
