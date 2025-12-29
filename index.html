@@ -80,14 +80,20 @@
 <div class="lg:col-span-4 flex flex-col gap-6">
 <!-- Profile Card -->
 <div class="bg-white dark:bg-[#1a202c] rounded-xl p-6 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]">
-<div class="flex flex-col items-center text-center">
-<div class="relative mb-4 group cursor-pointer">
-    <div class="w-32 h-32 rounded-full bg-cover bg-center border-4 border-primary/10" 
-     data-alt="Retrato profesional de José Sebastián Delgado Gámez" 
-     style="background-image: url('FotoDePerfil.png');">
-</div>
+  <div class="flex flex-col items-center text-center">
+    <div class="relative mb-4 group cursor-pointer">
+      
+      <!-- Contenedor circular con imagen -->
+      <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/10">
+        <img src="FotoDePerfil.png" 
+             alt="Retrato profesional de José Sebastián Delgado Gámez" 
+             class="w-full h-full object-cover object-center">
+      </div>
 
-<div class="absolute bottom-1 right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white dark:border-[#1a202c]"></div>
+      <!-- Indicador de estado (ejemplo: conectado) -->
+      <div class="absolute bottom-1 right-1 bg-green-500 w-4 h-4 rounded-full border-2 border-white dark:border-[#1a202c]"></div>
+    </div>
+  </div>
 </div>
 <h2 class="text-2xl font-bold text-[#0d121b] dark:text-white">José Sebstián Delgado Gámez</h2>
 <p class="text-primary font-medium mt-1">Investigador &amp; Desarrollador</p>
