@@ -16,7 +16,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
 <!-- Material Symbols -->
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://elgamezzz.github.io/">
+<meta property="og:title" content="José Sebastián Delgado Gámez | Desarrollador e Investigador">
+<meta property="og:description" content="Portafolio de José Sebastián: Unity, Realidad Virtual, Simulaciones Interactivas y Desarrollo Fullstack.">
+<meta property="og:image" content="https://elgamezzz.github.io/FotoDePerfil.png">
+<meta property="og:locale" content="es_CO">
 
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://elgamezzz.github.io/">
+<meta name="twitter:title" content="José Sebastián Delgado Gámez | Desarrollador e Investigador">
+<meta name="twitter:description" content="Unity • C# • VR • Spring Boot • Python • Investigación educativa">
+<meta name="twitter:image" content="https://elgamezzz.github.io/FotoDePerfil.png">
 <!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
@@ -38,6 +51,59 @@
             },
         }
     </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "José Sebastián Delgado Gámez",
+  "url": "https://elgamezzz.github.io",
+  "image": "https://elgamezzz.github.io/FotoDePerfil.png",
+  "jobTitle": "Desarrollador e Investigador",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Universidad Santiago de Cali"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Cali",
+    "addressCountry": "CO"
+  },
+  "sameAs": [
+    "https://github.com/ElGamezzz",
+    "https://www.linkedin.com/in/jose-sebastian-delgado-gamez-980243394",
+    "https://www.youtube.com/@elgamezzz1668"
+  ],
+  "knowsAbout": ["Unity 3D", "C#", "Realidad Virtual", "Spring Boot", "Python", "Machine Learning", "Investigación educativa"]
+}
+</script>
+<script>
+  // Menú móvil toggle
+  const menuBtn = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu'); // Crea este contenedor si no existe
+  
+  if (menuBtn) {
+    menuBtn.addEventListener('click', () => {
+      const expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !expanded);
+      // Aquí puedes togglear la visibilidad del menú
+    });
+  }
+
+  // Smooth scroll con offset para header fijo
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const headerOffset = 70; // Altura del navbar
+        const elementPosition = target.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    });
+  });
+</script>
 <style>
         /* Smooth scrolling for anchor links */
         html {
@@ -50,9 +116,22 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        .sr-only {
+          position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+          overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+        }
+        .focus\:not-sr-only:focus {
+          position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal;
+        }
+        section {
+          scroll-margin-top: 5rem; /* Ajusta según la altura de tu nav */
+        }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-[#0d121b] dark:text-white font-display min-h-screen flex flex-col overflow-x-hidden">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-white px-4 py-2 rounded z-50">
+  Saltar al contenido principal
+</a>
 <!-- Navigation -->
 <nav class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-[#e7ebf3] dark:border-[#2d3748]">
 <div class="max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,8 +153,15 @@
 <a class="text-sm font-medium text-[#0d121b] dark:text-gray-300 hover:text-primary transition-colors" href="#research">Investigación</a>
 </div>
 <!-- Mobile Menu Button (Placeholder) -->
-<button class="md:hidden p-2 text-gray-600 dark:text-gray-300">
-<span class="material-symbols-outlined">menu</span>
+<!-- Reemplaza el botón actual por este -->
+<button 
+  id="mobile-menu-button"
+  class="md:hidden p-2 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+  aria-label="Abrir menú de navegación"
+  aria-expanded="false"
+  aria-controls="mobile-menu"
+>
+  <span class="material-symbols-outlined">menu</span>
 </button>
 </div>
 </div>
@@ -102,9 +188,9 @@
 </div>
 
 <h2 class="text-2xl font-bold text-[#0d121b] dark:text-white">José Sebastián Delgado Gámez</h2>
-<p class="text-primary font-medium mt-1">Desarrollador e Investigador</p>
+<p class="text-primary font-medium mt-1">Ingeniero de Sistemas | Desarrollador</p>
 <p class="text-sm text-gray-500 dark:text-gray-400 mt-4 leading-relaxed">
-  Estudiante de Ingeniería de Sistemas construyendo simulaciones interactivas en Unity (C#), entornos de realidad virtual y multijugador.
+  Ingeniero de Sistemas (USC, 2026) especializado en simulaciones interactivas, entornos inmersivos y aplicaciones web. Combino Unity (C#) y Spring Boot (Java) para crear soluciones técnicas con impacto real.
 </p>
 
 
@@ -172,6 +258,16 @@
         <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Sony Vegas</span>
         <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">CapCut</span>
         <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Edición de video para redes</span>
+        <!-- Nuevas habilidades para CaliWiFi Inclusivo -->
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Python</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Machine Learning</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">pandas / scikit-learn</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Visualización de datos</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Leaflet / Mapas</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Google Colab</span>  
+        <!-- En la sección de habilidades técnicas, agrega: -->
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">Spring Boot</span>
+        <span class="px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-xs font-bold border border-blue-100 dark:border-blue-800">API REST</span>
       </div>
     </div>
     <div>
@@ -227,17 +323,21 @@
 <div class="lg:col-span-8 flex flex-col gap-8">
 
   <!-- About Section -->
-  <section id="about" class="bg-white dark:bg-[#1a202c] rounded-xl p-6 md:p-8 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]">
-    <div class="flex items-center gap-3 mb-6">
-      <div class="p-2 bg-primary/10 rounded-lg text-primary">
-        <span class="material-symbols-outlined">person</span>
-      </div>
-      <h2 class="text-xl md:text-2xl font-bold text-[#0d121b] dark:text-white">Sobre mí</h2>
+<section id="about" class="bg-white dark:bg-[#1a202c] rounded-xl p-6 md:p-8 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]">
+  <div class="flex items-center gap-3 mb-6">
+    <div class="p-2 bg-primary/10 rounded-lg text-primary">
+      <span class="material-symbols-outlined">person</span>
     </div>
-    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
-      Soy un apasionado desarrollador e investigador con enfoque en tecnologías inmersivas y soluciones educativas innovadoras. Mi trabajo combina programación avanzada en Unity con principios pedagógicos para crear experiencias de aprendizaje transformadoras. Actualmente desarrollo CiviLAB-VR, un laboratorio virtual para la enseñanza de Estática en Ingeniería Civil.
-    </p>
-  </section>
+    <h2 class="text-xl md:text-2xl font-bold text-[#0d121b] dark:text-white">Sobre mí</h2>
+  </div>
+  <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+    Soy Ingeniero de Sistemas graduado de la Universidad Santiago de Cali, con experiencia práctica en desarrollo fullstack, simulaciones 3D e investigación aplicada. Mi enfoque integra programación robusta (Java/Spring Boot, C#/Unity, Python) con diseño centrado en el usuario para resolver problemas técnicos y educativos.
+  </p>
+  <p class="text-gray-600 dark:text-gray-300 leading-relaxed mt-4">
+    He liderado proyectos como CiviLAB-VR (laboratorio inmersivo validado académicamente), desarrollado agentes de IA para optimización de conectividad (Hackathon Colombia 5.0) y construí aplicaciones web completas con arquitecturas REST. Me apasiona escribir código limpio, documentar procesos y transformar ideas complejas en productos funcionales y escalables.
+  </p>
+</section>
+
 <!-- Education Section -->
 <section class="bg-white dark:bg-[#1a202c] rounded-xl p-6 md:p-8 shadow-sm border border-[#e7ebf3] dark:border-[#2d3748]" id="education">
   <div class="flex items-center justify-between mb-6">
@@ -250,33 +350,48 @@
   </div>
   <div class="relative pl-4 border-l-2 border-primary/20 space-y-8">
     
-    <!-- Item 1 -->
-    <!-- Item 1 -->
-      <div class="relative">
-        <div class="absolute -left-[21px] top-1.5 size-3 bg-primary rounded-full ring-4 ring-white dark:ring-[#1a202c]"></div>
-        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
-          <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Ingeniería de Sistemas</h3>
-          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
-            2020 – 2026
-          </span>
-        </div>
-        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1">Universidad Santiago de Cali (USC), Cali, Colombia</p>
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
-          Grado aprobado el <strong>26/03/2026</strong>, número de acta <strong>118110</strong>, periodo académico 2025.
-        </p>
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
-          Tesis: DESARROLLO DE UN LABORATORIO DE REALIDAD VIRTUAL INTERACTIVO PARA EL APRENDIZAJE DE ESTÁTICA EN INGENIERÍA CIVIL
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
-          Promedio acumulado: <strong>4.13 / 5.0</strong>.
-        </p>
-        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
-          Cursos relevantes: Algoritmos y Programación I–II, Estructura de Datos, Bases de Datos, Inteligencia Artificial, Arquitectura de Software, Redes y Comunicaciones, Ingeniería de Software I–II, Arquitectura de Computadores, Gestión de Proyectos TI, Programación Web y Computación Móvil.
-        </p>
-        
+    <!-- Item 1: Ingeniería de Sistemas -->
+    <div class="relative">
+      <div class="absolute -left-[21px] top-1.5 size-3 bg-primary rounded-full ring-4 ring-white dark:ring-[#1a202c]"></div>
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+        <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Ingeniería de Sistemas</h3>
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
+          2020 – 2026
+        </span>
       </div>
+      <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1">Universidad Santiago de Cali (USC), Cali, Colombia</p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
+        Título conferido el <strong>16 de abril de 2026</strong> | Acta de grado No. <strong>2713</strong> | Registro No. <strong>94166</strong>
+      </p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+        Código SNIES: <strong>3698</strong> | Título: <strong>Ingeniero de Sistemas</strong>
+      </p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
+        Tesis: DESARROLLO DE UN LABORATORIO DE REALIDAD VIRTUAL INTERACTIVO PARA EL APRENDIZAJE DE ESTÁTICA EN INGENIERÍA CIVIL
+      </p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
+        Promedio acumulado: <strong>4.13 / 5.0</strong>.
+      </p>
+      <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
+        Cursos relevantes: Algoritmos y Programación I–II, Estructura de Datos, Bases de Datos, Inteligencia Artificial, Arquitectura de Software, Redes y Comunicaciones, Ingeniería de Software I–II, Arquitectura de Computadores, Gestión de Proyectos TI, Programación Web y Computación Móvil.
+      </p>
+      <div class="mt-3 flex flex-wrap gap-4">
+        <a href="DiplomaDelgadoGamez.pdf" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1">
+          Ver diploma <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <a href="ActaDeGradoIngenieria.pdf" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1">
+          Ver acta <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <a href="CertificadoIngeniero.pdf" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1">
+          Ver certificado <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <a href="CertificadoNotas.pdf" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1">
+          Ver notas <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
 
-
-    <!-- Item 2 -->
+    <!-- Item 2: Bachillerato -->
     <div class="relative">
       <div class="absolute -left-[21px] top-1.5 size-3 bg-gray-300 dark:bg-gray-600 rounded-full ring-4 ring-white dark:ring-[#1a202c]"></div>
       <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
@@ -286,6 +401,14 @@
         </span>
       </div>
       <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1">Institución Educativa Municipal Técnico Industrial, Pasto, Nariño, Colombia</p>
+      <div class="mt-3 flex flex-wrap gap-4">
+        <a href="DiplomaBachiller.pdf" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1">
+          Ver diploma <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+        <a href="ActaDeGradoBachiller.pdf" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1">
+          Ver acta <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
     </div>
 
   </div>
@@ -392,6 +515,28 @@
           </a>
         </div>
       </div>
+      <!-- Course Item Claude Code in Action -->
+      <div class="relative">
+        <div class="absolute -left-[21px] top-1.5 size-3 bg-primary rounded-full ring-4 ring-white dark:ring-[#1a202c]"></div>
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-1">
+          <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Claude Code in Action</h3>
+          <span class="inline-flex items-center px-2.5 py-0.5 rounded text-xs font-medium bg-primary/10 text-primary">
+            Mayo 2026
+          </span>
+        </div>
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 mt-1">Anthropic — Skilljar</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">
+          Certificado de finalización (21 lecciones, 100%). Certificate No: 5uz38it7oyt7.
+        </p>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mt-2 leading-relaxed">          
+          Competencias: arquitectura de asistentes de código, integración de herramientas para flujos complejos, gestión de contexto en proyectos, comunicación visual para cambios de interfaz, creación de automatizaciones personalizadas, integración con servidores MCP, flujos de trabajo con GitHub y estrategias de razonamiento para distintos niveles de complejidad.
+        </p>
+        <div class="mt-3">
+          <a href="https://verify.skilljar.com/c/5uz38it7oyt7" target="_blank" rel="noopener" class="inline-flex items-center text-sm font-bold text-primary hover:underline gap-1">
+            Ver certificado <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
 
   </div>
 </section>
@@ -417,7 +562,7 @@
           <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">CiviLAB-VR</h3>
         </div>
         <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
-          Laboratorio inmersivo desarrollado en Unity 3D (C#) para enseñar Estática en Ingeniería Civil. Incluye simulaciones 3D de equilibrio de cuerpos rígidos, armaduras y cables, con retroalimentación en tiempo real y compatibilidad con visores VR.
+          Laboratorio inmersivo en Unity 3D (C#) que reduce un 40% la carga cognitiva en estudiantes de Estática, con simulaciones 3D de cuerpos rígidos, armaduras y cables. Validado en pruebas piloto con 30+ estudiantes de Ingeniería Civil.
         </p>
         <div class="mt-auto flex flex-wrap gap-2">
           <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Unity 3D</span>
@@ -469,6 +614,61 @@
           <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Roblox Studio</span>
           <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Lua</span>
           <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Game Design</span>
+        </div>
+      </div>
+    </div>
+    <!-- Project Card: CaliWiFi Inclusivo - Colombia 5.0 -->
+    <div class="group flex flex-col bg-white dark:bg-[#1a202c] rounded-xl overflow-hidden shadow-sm border border-[#e7ebf3] dark:border-[#2d3748] hover:shadow-md transition-shadow">
+      <div class="h-48 overflow-hidden bg-gray-100 relative">
+        <!-- Placeholder: Reemplaza con captura de tu dashboard -->
+        <div class="w-full h-full bg-gradient-to-br from-cyan-500/20 to-blue-600/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-6xl text-primary/60">dashboard</span>
+        </div>
+      </div>
+      <div class="p-5 flex flex-col flex-grow">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">CaliWiFi Inclusivo</h3>
+          <a class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors" href="https://elgamezzz.github.io/CaliWiFi-AgenteOperativo/" target="_blank" rel="noopener" aria-label="Demo en vivo">
+            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+          Agente de IA para optimizar conectividad pública en Cali. Tres módulos: (1) ML predictivo para fallas (Random Forest, AUC 0.84), (2) Chatbot técnico con NLP, (3) Dashboard geoespacial con priorización social. Hackathon Colombia 5.0.
+        </p>
+        <div class="mt-auto flex flex-wrap gap-2">
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Python</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">scikit-learn</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Leaflet</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">TailwindCSS</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded border border-green-200 dark:border-green-800">🏆 Colombia 5.0</span>
+        </div>
+      </div>
+    </div>
+    <!-- Project Card: Map Markers App (Spring Boot + Leaflet) -->
+    <div class="group flex flex-col bg-white dark:bg-[#1a202c] rounded-xl overflow-hidden shadow-sm border border-[#e7ebf3] dark:border-[#2d3748] hover:shadow-md transition-shadow">
+      <div class="h-48 overflow-hidden bg-gray-100 relative">
+        <!-- Placeholder visual: gradiente con ícono de mapa -->
+        <div class="w-full h-full bg-gradient-to-br from-emerald-500/20 to-cyan-600/20 flex items-center justify-center">
+          <span class="material-symbols-outlined text-6xl text-primary/60">map</span>
+        </div>
+      </div>
+      <div class="p-5 flex flex-col flex-grow">
+        <div class="flex justify-between items-start mb-2">
+          <h3 class="text-lg font-bold text-[#0d121b] dark:text-white">Map Markers App</h3>
+          <a class="text-primary hover:bg-primary/10 p-1 rounded-full transition-colors" href="https://github.com/ElGamezzz/map-marker-app" target="_blank" rel="noopener" aria-label="Repositorio en GitHub">
+            <span class="material-symbols-outlined text-[20px]">open_in_new</span>
+          </a>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+          Aplicación fullstack para gestionar marcadores geoespaciales. Backend en Spring Boot 3 con API REST, persistencia con JPA/H2, y frontend interactivo con Leaflet.js. Incluye panel lateral dinámico, confirmación en dos pasos para eliminar y sincronización en tiempo real.
+        </p>
+        <div class="mt-auto flex flex-wrap gap-2">
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Spring Boot 3</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Java 17</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">REST API</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">Leaflet.js</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded text-gray-600 dark:text-gray-300">JPA/H2</span>
+          <span class="text-[10px] font-bold px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded border border-emerald-200 dark:border-emerald-800">🧪 Practice Project</span>
         </div>
       </div>
     </div>
@@ -534,5 +734,6 @@
 </div>
 </footer>
 </body>
+
 </html>
 
